@@ -4,3 +4,4 @@
 *.log
 *.pot
 *.pyc
+db.sqlite3
