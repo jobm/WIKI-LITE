@@ -1,4 +1,10 @@
 {% extends 'layout.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-    <h4>Where all wikis will be listed</h4>
+
+    <div class="container">
+        {% csrf_token %}
+        {% crispy article_form %}
+    </div>
+
 {% endblock %}
