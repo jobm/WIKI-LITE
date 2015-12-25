@@ -5,16 +5,17 @@
 
     {% if article_edit_form  %}
         <div class="container">
-            {% csrf_token %}
-            {% crispy article_edit_form_form %}
-        </div>
-    {% else %}
-
-        <div class="container">
             <br>
             <a href="/wiki/delete/" class="btn btn-danger btn-lg">delete</a>
             <br>
             <br>
+            {% csrf_token %}
+            {% crispy article_edit_form_form %}
+        </div>
+    {% else %}
+        <br>
+        <br>
+        <div class="container">
             {% csrf_token %}
             {% crispy article_form %}
         </div>

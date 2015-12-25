@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #added wiki app and crispy forms -Job
+    'haystack',
     'crispy_forms',
     'Wiki',
     #end -Job
@@ -148,3 +149,10 @@ STATICFILES_DIRS = (
 #added crispy forms bootstrap3 -Job
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:8000',
+        'INDEX_NAME': 'article',
+    }
+}

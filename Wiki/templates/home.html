@@ -1,4 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h4>Landing Page</h4>
+       <form action="/search" method="get">
+        <input type="text" name="q">
+        </form>
 {% endblock %}
