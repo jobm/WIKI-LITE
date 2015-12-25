@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/1.9/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
+import dj_database_url
+DATABASES = {}
+DATABASES['default'] =  dj_database_url.config()
+DATABASES['default']['CONN_MAX_AGE'] = 500
+
 
 import os
 
@@ -52,6 +57,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.models.Session',
+    #add middleware
+    #end of middleware
 ]
 
 ROOT_URLCONF = 'WikiClone.urls'
@@ -75,17 +83,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WikiClone.wsgi.application'
 
-
+DEFAULT_DB_ALIAS = 'default'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# SOUTH_DATABASE_ADAPTERS = {'default':'south.db.postgresql_psycopg2'}
+
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'mwaniki123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -130,3 +147,4 @@ STATICFILES_DIRS = (
 
 #added crispy forms bootstrap3 -Job
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
