@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from Wiki.forms import ArticleAddForm, ArticleEditForm
-from Wiki.models import Article, Draft
+from django.shortcuts import render, render_to_response, redirect, get_object_or_404
+from Wiki.forms import ArticleAddForm, ArticleEditForm,SearchForm
+from Wiki.models import Article
+from haystack.query import SearchQuerySet
+import simplejson as json
 from django.http import HttpResponse
 # Create your views here.
 
@@ -73,3 +75,15 @@ def wiki_delete(request):
     """delete the wiki"""
     wiki.delete()
     return redirect('/wikis/')
+
+
+"""haystack search"""
+def search_titles(request):
+    content_auto = SearchQuerySet().autocomplete(content_auto=request.GET.get('q',''))[:5]
+    all = SearchQuerySet().all()
+    print(all[0].text)
+    suggestions = [article.slug for article in content_auto]
+    data = json.dumps({
+        'articles': suggestions
+    })
+    return HttpResponse(data, content_type='application/json')

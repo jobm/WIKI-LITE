@@ -1,6 +1,9 @@
-{% extends 'layout.html' %}
+{% extends 'Layout.html' %}
 {% block content %}
-       <form action="/search" method="get">
-        <input type="text" name="q">
-        </form>
+    <div class="container">
+        <div class="ui-widget">
+            <label for="q">Search</label>
+            <input id="q">
+        </div>
+    </div>
 {% endblock %}

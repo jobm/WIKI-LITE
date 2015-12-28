@@ -3,8 +3,8 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field ,Reset, Submit, Button
 from crispy_forms.bootstrap import FormActions
 from django.utils.translation import ugettext as _
-from Wiki.models import Article, Draft
-
+from Wiki.models import Article
+from haystack.forms import SearchForm
 
 class ArticleAddForm(ModelForm):
 
@@ -56,3 +56,8 @@ class ArticleEditForm(ModelForm):
                 ),
 
         )
+
+
+class ArticleSearchForm(SearchForm):
+    def no_query_found(self):
+        return self.searchqueryset.all()
