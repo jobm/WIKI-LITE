@@ -5,3 +5,4 @@
 *.pot
 *.pyc
 whoosh_index
+/migrations
