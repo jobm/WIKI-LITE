@@ -4,3 +4,4 @@
 *.log
 *.pot
 *.pyc
+whoosh_index

@@ -1,0 +1,3 @@
+{{ object.slug }}
+{{ object.title }}
+{{ object.post }}

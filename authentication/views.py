@@ -6,7 +6,7 @@ from .models import SignUp
 
 
 # Create your views here.
-def home(request):
+def auth(request):
     title = 'Sign Up Now'
     form = SignUpForm(request.POST or None)
     context = {
