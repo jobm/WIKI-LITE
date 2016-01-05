@@ -17,7 +17,8 @@ Including another URLconf
 from django.conf.urls import url, include, patterns
 from django.contrib import admin
 
-urlpatterns = patterns('',
-    (r'^',include('Wiki.urls')),
+urlpatterns = patterns(
+    '',
+    (r'^', include('Wiki.urls')),
     (r'^admin/', admin.site.urls),
 )

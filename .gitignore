@@ -4,6 +4,4 @@
 *.log
 *.pot
 *.pyc
-db.sqlite3
-migrations
 whoosh_index

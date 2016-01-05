@@ -3,6 +3,7 @@ from autoslug import AutoSlugField
 from django.utils.timezone import now
 # Create your models here.
 
+
 class Article(models.Model):
     title = models.CharField(blank=False, max_length=100)
     post = models.TextField(blank=False)
@@ -10,3 +11,6 @@ class Article(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     date_updated = models.DateTimeField(auto_now_add=True)
     slug = AutoSlugField(populate_from='title')
+
+    def __unicode__(self):
+        return self.title

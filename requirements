@@ -1,0 +1,9 @@
+crispy-forms-foundation==0.5.3
+Django==1.8
+django-autoslug==1.9.3
+django-crispy-forms==1.5.2
+django-haystack==2.4.1
+pysolr==3.3.3
+simplejson==3.8.1
+wheel==0.24.0
+Whoosh==2.7.0

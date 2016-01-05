@@ -2,13 +2,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from Wiki import views
 urlpatterns = [
-    url(r'^$',views.home),
+    url(r'^$', views.home),
 
-    url(r'^autocomplete/$',views.search_titles, name='autocomplete'),
+    url(r'^autocomplete/', views.search_titles),
     url(r'^search/', include('haystack.urls')),
-    url(r'wikis/$',views.wikis),
+    url(r'^wikis/$', views.wikis),
 
-    url(r'wiki/(?P<pk>\d+)/$',views.wiki_view),
+    url(r'wiki/(?P<pk>\d+)/$', views.wiki_view),
 
     url(r'wiki/create/$', views.wiki_add_form),
     url(r'wiki/add/$', views.wiki_create),
