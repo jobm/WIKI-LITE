@@ -42,12 +42,9 @@ INSTALLED_APPS = [
     'registration',
     'whoosh',
     'haystack',
-<<<<<<< HEAD
     'crispy_forms',
     'registration',
-=======
     'authentication',
->>>>>>> victor
     'Wiki',
     # end
 
