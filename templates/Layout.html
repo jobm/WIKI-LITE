@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 </head>
 <body>
+
+{% include 'navbar.html' %}
+
 {% block content %}
 
 {% endblock %}
+
 <script type="text/javascript" src="{% static 'js/jquery-2.1.4.js' %}"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script type="text/javascript" src="{% static 'bootstrap3/js/bootstrap.js' %}"></script>

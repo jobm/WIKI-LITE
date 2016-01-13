@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'home.html' %}
+{% block search %}
 
-{% block results %}
     <div class="container">
 
         {% for result in page.object_list %}
@@ -10,7 +10,6 @@
         {% empty %}
             <p>No results found.</p>
         {% endfor %}
-
     </div>
 
 {% endblock %}

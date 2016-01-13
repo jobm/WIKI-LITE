@@ -5,9 +5,8 @@ from Wiki.models import Article
 class ArticleIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
-    """for autocomplete"""
-
-    ac = indexes.EdgeNgramField(model_attr='title')
+    # for autocomplete
+    auto_title = indexes.EdgeNgramField(model_attr='title')
 
     def get_model(self):
         return Article

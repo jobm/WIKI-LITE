@@ -19,16 +19,18 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from WikiClone import views
+
 urlpatterns = [
     url(r'^$', views.home_page),
-    url(r'^wikis/', include('Wiki'), name='wiki'),
-    url(r'^auth/', include('authentication')),
-
+    url(r'^wikis/', include('Wiki.urls')),
+    url(r'^auth/', include('authentication.urls')),
+    
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^accounts/', include('registration.backends.default.urls')),
-
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

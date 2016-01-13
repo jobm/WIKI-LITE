@@ -37,20 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
     # third party apps
     'crispy_forms',
     'registration',
-    # my apps
-    'authentication',
-
-   #added wiki app and crispy forms -Job
     'whoosh',
     'haystack',
-
+    'authentication',
     'Wiki',
-    #end -Job
+    # end
 
 ]
 
@@ -64,8 +58,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.models.Session',
-    #add middleware
-    #end of middleware
 ]
 
 ROOT_URLCONF = 'WikiClone.urls'
@@ -73,7 +65,7 @@ ROOT_URLCONF = 'WikiClone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,8 +79,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'WikiClone.wsgi.application'
-
-
 
 DEFAULT_DB_ALIAS = 'default'
 
@@ -157,7 +147,7 @@ STATICFILES_DIRS = (
     # '/var/www/static/',
 )
 
-#Crispy FORM TAGs SETTINGS
+# Crispy FORM TAGs SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # DJANGO REGISTRATION REDUX SETTINGS
@@ -167,25 +157,14 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets/'),
+    os.path.join(BASE_DIR, 'assets'),
 )
-
-# TEMPLATE_LOADERS = (
-#     'django.template.loaders.filesystem.Loader',
-#     'django.template.loaders.app_directories.Loader',
-#
-#     # 'django.template.loaders.eggs.Loader',
-# )
-
 
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
         'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
     },
-
 }
-
-
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
