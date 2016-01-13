@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -27,23 +26,31 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    # django app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #added wiki app and crispy forms -Job
-    'whoosh',
-    'haystack',
+    # third party apps
     'crispy_forms',
     'registration',
+    'whoosh',
+    'haystack',
+<<<<<<< HEAD
+    'crispy_forms',
+    'registration',
+=======
+    'authentication',
+>>>>>>> victor
     'Wiki',
-    #end -Job
+    # end
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -56,8 +63,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.models.Session',
-    #add middleware
-    #end of middleware
 ]
 
 ROOT_URLCONF = 'WikiClone.urls'
@@ -81,6 +86,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'WikiClone.wsgi.application'
 
 DEFAULT_DB_ALIAS = 'default'
+
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
@@ -115,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -129,33 +134,41 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+MEDIA_URL = '/media/'
+# noinspection PyUnresolvedReferences
+MEDIA_ROOT = os.path.join(BASE_DIR, "static_in_env", "media_root")
+
 STATIC_URL = '/static/'
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_in_env", "static_root")
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets/'),
+    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
+    # os.path.join(BASE_DIR, "static_in_env"),
+    # '/var/www/static/',
 )
 
-# TEMPLATE_LOADERS = (
-#     'django.template.loaders.filesystem.Loader',
-#     'django.template.loaders.app_directories.Loader',
-#
-#     # 'django.template.loaders.eggs.Loader',
-# )
-
-#added crispy forms bootstrap3 -Job
+# Crispy FORM TAGs SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# DJANGO REGISTRATION REDUX SETTINGS
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
 
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
         'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
-    },
-    'solr': {
-        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-        'URL': 'http://127.0.0.1:8983/solr'
     },
 }
 

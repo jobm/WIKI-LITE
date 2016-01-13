@@ -3,19 +3,13 @@ from django.shortcuts import (render, render_to_response,
 from Wiki.forms import ArticleAddForm, ArticleEditForm, SearchForm
 from Wiki.models import Article
 from haystack.query import SearchQuerySet
-import simplejson as json
+import json
 from django.http import HttpResponse
-# Create your views here.
-
-
-# view for unregistered users
-def home(request):
-    return render(request, 'home.html')
+# Create your views here
 
 
 # this is the view for registered users
 def wikis(request):
-    request.session.set_test_cookie()
     return render(request, 'wiki_home.html')
 
 
@@ -27,24 +21,24 @@ def wiki_view(request, pk):
 
 # form to create a wiki"""
 def wiki_add_form(request):
-    """instantiating a blank form"""
+    # instantiating a blank form
     article_form = ArticleAddForm
     return render(request, 'wiki_form.html', {'article_form': article_form})
 
 
 # creating a wiki
 def wiki_create(request):
-    """instantiating the form with a POST request if one exists"""
+    # instantiating the form with a POST request if one exists"""
     article_form = ArticleAddForm(request.POST or None)
-    """checking the request method"""
+    # checking the request method"""
     if request.method == 'POST':
-        """checking whether the form is valid"""
+        # checking whether the form is valid"""
         if article_form.is_valid():
-            """saving the form"""
+            # saving the form"""
             article_form.save()
-            """redirecting to the page with wikis"""
+            # redirecting to the page with wikis"""
             return redirect('/wikis')
-    """rendering the form again if its invalid"""
+    # Srendering the form again if its invalid"""
     return render(request, 'wiki_form.html', {'article_form': article_form})
 
 
@@ -78,15 +72,14 @@ def wiki_delete(request):
     wiki = get_object_or_404(Article, pk=request.session.get('id'))
     """delete the wiki"""
     wiki.delete()
+    request.session['id'] = None
     return redirect('/wikis/')
 
 
 # haystack search"""
 def search_titles(request):
-    content_auto = SearchQuerySet().filter(ac=request.GET.get('q', ''))[:5]
-    sgs = [article.slug for article in content_auto]
+    ct_auto = SearchQuerySet().filter(auto_title=request.GET.get('q', ''))
     data = json.dumps({
-        'articles': sgs
+        'results': [article.title for article in ct_auto]
     })
-
     return HttpResponse(data, content_type='application/json')
