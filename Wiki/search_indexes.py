@@ -1,7 +1,6 @@
 from haystack import indexes
 from Wiki.models import Article
 
-
 class ArticleIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
