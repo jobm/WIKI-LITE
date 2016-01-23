@@ -4,7 +4,8 @@
     {% if article_edit_form  %}
         <div class="container">
             <br>
-            <a href="/wiki/delete/" class="btn btn-danger btn-lg">delete</a>
+            <!--<a href="/wikis/wiki/delete/{{id}}" class="btn btn-danger btn-lg">delete</a>-->
+            <a href="{% url "wikis:delete" id %}" class="btn btn-danger btn-lg">delete</a>
             <br>
             <br>
             {% csrf_token %}

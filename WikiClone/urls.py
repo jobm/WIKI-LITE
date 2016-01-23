@@ -22,11 +22,9 @@ from WikiClone import views
 
 urlpatterns = [
     url(r'^$', views.home_page),
-    url(r'^wikis/', include('Wiki.urls')),
-    url(r'^auth/', include('authentication.urls')),
-    
+    url(r'^wikis/', include('Wiki.urls', namespace='wikis')),
+    url(r'^auth/', include('authentication.urls', namespace='auth')),
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
 if settings.DEBUG:

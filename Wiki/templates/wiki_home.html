@@ -1,5 +1,18 @@
 {% extends 'Layout.html' %}
 {% block content %}
-    <h2>hELLOz</h2>
-    {{ wiki.title }}
+<div class="container">
+  <ul class="list-group">
+    {% for wiki in wikis  %}
+      <li class="list-group-item">
+        <a href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
+        <h5>published on: {{ wiki.date_created }}</h5>
+        <p>
+          {{wiki.post}}
+        </p>
+        <hr>
+        <h5>{{wiki.category}}</h5>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}
