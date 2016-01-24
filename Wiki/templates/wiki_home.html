@@ -1,6 +1,6 @@
 {% extends 'Layout.html' %} {% block content %}
 <div class="container">
-  <<<<<<< HEAD <br>
+  <br>
     {% block search %} {% endblock search %}
     <br>
     <div class="row">
@@ -9,7 +9,8 @@
         <ul class="post_categories">
           {% for wiki in wikis %}
           <h4>Trending posts</h4>
-          <a class="post_title_category" href="{% url " wikis:details " wiki.pk %}">{{wiki.title}}</a> {% endfor %}
+          <a class="post_title_category" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
+          {% endfor %}
         </ul>
 
       </div>
@@ -17,7 +18,7 @@
         <ul class="list-group">
           {% for wiki in wikis %}
           <li class="list-group-item">
-            <a class="post_title" href="{% url " wikis:details " wiki.pk %}">{{wiki.title}}</a>
+            <a class="post_title" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
             <h5 class="post_category">category: {{wiki.category}}</h5>
             <h5 class="post_date">published on: {{ wiki.date_created }}</h5>
             <p class="main_post">
