@@ -7,13 +7,22 @@
 
       <div class="col-md-3">
         <ul class="post_categories">
-          {% for wiki in wikis %}
           <h4>Trending posts</h4>
+          {% for wiki in wikis %}
           <a class="post_title_category" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
+          <br>
           {% endfor %}
         </ul>
-
       </div>
+        <form action="" method="get">
+          {{ filter.form.as_p }}
+          <input type="submit" />
+        </form>
+        {% for wiki in filter %}
+          {{wiki.title}}
+          <br />
+          {{wiki.post }}
+        {% endfor %}
       <div class="col-md-9">
         <ul class="list-group">
           {% for wiki in wikis %}

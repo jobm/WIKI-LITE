@@ -1,7 +1,7 @@
 from django.shortcuts import (render, render_to_response,
                               redirect, get_object_or_404)
 from Wiki.forms import ArticleAddForm, ArticleEditForm, SearchForm
-from Wiki.models import Article
+from Wiki.models import Article, ArticleFilter
 from haystack.query import SearchQuerySet
 import simplejson as json
 from django.http import HttpResponse
@@ -11,7 +11,8 @@ from django.http import HttpResponse
 # this is the view for registered users
 def wikis(request):
     wikis = Article.objects.all()
-    context = {"wikis": wikis}
+    filter = ArticleFilter(request.GET, queryset=Article.objects.all())
+    context = {"wikis": wikis, 'filter': filter}
     return render(request, 'wiki_home.html', context=context)
 
 
