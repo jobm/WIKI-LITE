@@ -1,0 +1,47 @@
+.text-align-center {
+	text-align: center;
+}
+/*main posts feed styling
+
+*/
+.post_title{
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+	font-size: 48px;
+	line-height: 40px;
+	letter-spacing: -1px;
+	color: #444;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+  font-weight: 100;
+}
+.post_category{
+	font-size: 1.5rem;
+	font-family: 'Raleway', sans-serif;
+	font-weight:lighter;
+	color:rgb(14, 14, 14);
+}
+.post_date{
+	font-size: 1.4rem;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+	color:rgb(138, 8, 71);
+}
+.main_post{
+	font-size: 1.6rem;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-weight: lighter;
+	letter-spacing:0.1em;
+	color:rgb(54, 53, 55);
+	text-indent: 9.5mm;
+  line-height: 1.5;
+}
+
+/*post category styling
+
+*/
+.post_categories h4{
+		font-family: 'Raleway', sans-serif;
+		font-size: 1.4rem;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+}
