@@ -1,6 +1,10 @@
 {% extends 'Layout.html' %}
 {% block content %}
 <div class="container">
+  <br>
+  {% block search %}
+  {% endblock search %}
+  <br>
   <ul class="list-group">
     {% for wiki in wikis  %}
       <li class="list-group-item">
