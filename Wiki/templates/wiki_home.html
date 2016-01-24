@@ -4,13 +4,14 @@
   <ul class="list-group">
     {% for wiki in wikis  %}
       <li class="list-group-item">
-        <a href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
-        <h5>published on: {{ wiki.date_created }}</h5>
-        <p>
+        <a class="post_title" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
+          <h5 class="post_category">category: {{wiki.category}}</h5>
+        <h5 class="post_date">published on: {{ wiki.date_created }}</h5>
+        <p class="main_post">
           {{wiki.post}}
         </p>
         <hr>
-        <h5>{{wiki.category}}</h5>
+
       </li>
     {% endfor %}
   </ul>
