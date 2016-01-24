@@ -1,6 +1,19 @@
 {% extends 'Layout.html' %}
 {% block content %}
 <div class="container">
+  <div class="row">
+
+  <div class="col-md-3">
+    <ul class="post_categories">
+        {% for wiki in wikis  %}
+        <h4>Trending posts</h4>
+        <a class="post_title_category" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
+
+        {% endfor %}
+    </ul>
+
+  </div>
+  <div class="col-md-9">
   <ul class="list-group">
     {% for wiki in wikis  %}
       <li class="list-group-item">
@@ -15,5 +28,7 @@
       </li>
     {% endfor %}
   </ul>
+ </div>
+</div>
 </div>
 {% endblock %}

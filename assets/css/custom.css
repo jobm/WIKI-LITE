@@ -1,6 +1,9 @@
 .text-align-center {
 	text-align: center;
 }
+/*main posts feed styling
+
+*/
 .post_title{
 	font-family: times, Times New Roman, times-roman, georgia, serif;
 	font-size: 48px;
@@ -31,4 +34,14 @@
 	color:rgb(54, 53, 55);
 	text-indent: 9.5mm;
   line-height: 1.5;
+}
+
+/*post category styling
+
+*/
+.post_categories h4{
+		font-family: 'Raleway', sans-serif;
+		font-size: 1.4rem;
+		font-weight: bold;
+		letter-spacing: 0.1em;
 }
