@@ -3,7 +3,7 @@ from django.shortcuts import (render, render_to_response,
 from Wiki.forms import ArticleAddForm, ArticleEditForm, SearchForm
 from Wiki.models import Article
 from haystack.query import SearchQuerySet
-import json
+import simplejson as json
 from django.http import HttpResponse
 # Create your views here
 
@@ -79,9 +79,10 @@ def wiki_delete(request, pk=None):
     return redirect('/wikis/wiki/')
 
 
-# haystack search"""
+# haystack search
 def search_titles(request):
-    ct_auto = SearchQuerySet().filter(auto_title=request.GET.get('q', ''))
+    ct_auto = SearchQuerySet().autocomplete(auto_title=
+                                            request.GET.get('q', ''))[:5]
     data = json.dumps({
         'results': [article.title for article in ct_auto]
     })

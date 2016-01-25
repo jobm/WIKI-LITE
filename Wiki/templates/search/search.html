@@ -1,16 +1,13 @@
-{% extends 'base.html' %}
+{% block content %}
+<div class="container">
 
-{% block results %}
-    <div class="container">
+    {% for result in page.object_list %}
+        <p>{{ results.object.slug }}</p>
+        <p>{{ result.object.title }}</p>
+        <p>{{ result.object.post }}</p>
+    {% empty %}
+        <p>No results found.</p>
+    {% endfor %}
 
-        {% for result in page.object_list %}
-            <p>{{ results.object.slug }}</p>
-            <p>{{ result.object.title }}</p>
-            <p>{{ result.object.post }}</p>
-        {% empty %}
-            <p>No results found.</p>
-        {% endfor %}
-
-    </div>
-
+</div>
 {% endblock %}
