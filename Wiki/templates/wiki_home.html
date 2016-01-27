@@ -6,23 +6,13 @@
     <div class="row">
 
       <div class="col-md-3">
-        <ul class="post_categories">
-          <h4>Trending posts</h4>
-          {% for wiki in wikis %}
-          <a class="post_title_category" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
-          <br>
+        <h2><i class="fa fa-filter"></i> by category</h2>
+        <ul class="list-group">
+          {% for cat in categories %}
+              <li class="list-group-item"><a href="?q={{ cat.category }}">{{ cat.category }}</a></li>
           {% endfor %}
         </ul>
       </div>
-        <form action="" method="get">
-          {{ filter.form.as_p }}
-          <input type="submit" />
-        </form>
-        {% for wiki in filter %}
-          {{wiki.title}}
-          <br />
-          {{wiki.post }}
-        {% endfor %}
       <div class="col-md-9">
         <ul class="list-group">
           {% for wiki in wikis %}

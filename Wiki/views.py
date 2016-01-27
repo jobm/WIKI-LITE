@@ -5,14 +5,19 @@ from Wiki.models import Article, ArticleFilter
 from haystack.query import SearchQuerySet
 import simplejson as json
 from django.http import HttpResponse
+from django.db.models import Q
 # Create your views here
 
 
 # this is the view for registered users
 def wikis(request):
     wikis = Article.objects.all()
-    filter = ArticleFilter(request.GET, queryset=Article.objects.all())
-    context = {"wikis": wikis, 'filter': filter}
+    categories = Article.objects.all()
+    query = request.GET.get('q')
+
+    if query:
+        wikis = wikis.filter(Q(category__icontains=query)).distinct()
+    context = {"wikis": wikis, 'categories': categories}
     return render(request, 'wiki_home.html', context=context)
 
 
