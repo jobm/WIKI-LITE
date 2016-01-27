@@ -4,25 +4,15 @@
     {% block search %} {% endblock search %}
     <br>
     <div class="row">
-
-<<<<<<< HEAD
-  <div class="col-md-3">
-    <ul class="post_categories">
-        <h4>Trending posts</h4>
-        {% for wiki in wikis  %}
-        <li>
-        <a class="post_title_category" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
-      </li>
-        {% endfor %}
-    </ul>
-=======
       <div class="col-md-3">
+        {% if categories %}
         <h2><i class="fa fa-filter"></i> by category</h2>
         <ul class="list-group">
           {% for cat in categories %}
               <li class="list-group-item"><a href="?q={{ cat.category }}">{{ cat.category }}</a></li>
           {% endfor %}
         </ul>
+      {% endif %}
       </div>
       <div class="col-md-9">
         <ul class="list-group">
@@ -35,8 +25,6 @@
               {{wiki.post}}
             </p>
             <hr>
->>>>>>> 9fc64e9a5cd701640ce92c9c9d730bddeec7fd4f
-
           </li>
           {% endfor %}
         </ul>
