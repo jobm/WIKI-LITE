@@ -2,7 +2,6 @@ from django.shortcuts import (render, render_to_response,
                               redirect, get_object_or_404)
 from Wiki.forms import ArticleAddForm, ArticleEditForm, SearchForm
 from Wiki.models import Article, ArticleFilter
-from haystack.query import SearchQuerySet
 import simplejson as json
 from django.http import HttpResponse
 from django.db.models import Q
@@ -14,7 +13,6 @@ def wikis(request):
     wikis = Article.objects.all()
     categories = Article.objects.all()
     query = request.GET.get('q')
-
     if query:
         wikis = wikis.filter(Q(category__icontains=query)).distinct()
     context = {"wikis": wikis, 'categories': categories}
@@ -22,8 +20,8 @@ def wikis(request):
 
 
 # view a single Wiki
-def wiki_view(request, pk):
-    wiki = get_object_or_404(Article, pk=pk)
+def wiki_view(request, slug):
+    wiki = get_object_or_404(Article, slug=slug)
     return render(request, 'wiki_view.html', {'wiki': wiki})
 
 
@@ -83,13 +81,3 @@ def wiki_delete(request, pk=None):
     """delete the wiki"""
     wiki.delete()
     return redirect('/wikis/wiki/')
-
-
-# haystack search
-def search_titles(request):
-    ct_auto = SearchQuerySet().autocomplete(auto_title=
-                                            request.GET.get('q', ''))[:5]
-    data = json.dumps({
-        'results': [article.title for article in ct_auto]
-    })
-    return HttpResponse(data, content_type='application/json')

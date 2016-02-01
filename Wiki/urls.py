@@ -4,12 +4,9 @@ from Wiki import views
 
 urlpatterns = [
     # url(r'^$', views.home),
-    url(r"^$", views.wikis),
+    url(r"^$", views.wikis, name="wikis"),
 
-    url(r'autocomplete/', views.search_titles),
-    url(r'search/', include('haystack.urls')),
-
-    url(r'wiki/(?P<pk>\d+)/$', views.wiki_view, name="details"),
+    url(r'wiki/(?P<slug>\w+)/$', views.wiki_view, name="details"),
 
     url(r'wiki/create/$', views.wiki_add_form, name="create"),
     url(r"wiki/add/$", views.wiki_create, name="add"),

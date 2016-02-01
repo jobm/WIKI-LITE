@@ -22,6 +22,8 @@ from WikiClone import views
 
 urlpatterns = [
     url(r'^$', views.home_page),
+    url(r'^autocomplete/', views.search_titles),
+    url(r'^search/', include('haystack.urls')),
     url(r'^wikis/', include('Wiki.urls', namespace='wikis')),
     url(r'^auth/', include('authentication.urls', namespace='auth')),
     url(r'^admin/', include(admin.site.urls)),
