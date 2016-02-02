@@ -25,7 +25,7 @@
             <p class="main_post">
               {{wiki.post}}
             </p>
-            <a href="{% url "wikis:edit" wiki.slug %}" class="btn btn-default btn-lg"><i class="fa fa-pencil"></i></a>
+            <a href="{% url "wikis:edit" wiki.slug %}" class="btn btn-default btn-lg"><i class="fa fa-scissors"></i></a>
             </button>
             <hr>
           </li>
@@ -34,4 +34,10 @@
       </div>
     </div>
 </div>
+<div class="fab_button">
+  <a href="{% url "wikis:create" %}">
+  <button class="kc_fab_main_btn"><i class="fa fa-pencil"></i></button>
+</a>
+</div>
+
 {% endblock %}

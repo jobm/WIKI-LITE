@@ -157,3 +157,51 @@
 .post_title_category{
 		text-transform: capitalize;
 }
+
+/*floating action button*/
+.fab_button{
+	position: relative;
+}
+.kc_fab_main_btn{
+	background-image: url(../images/pen_icon.png);
+	background-size: cover;
+  background-color:#F44336;
+  width:60px;
+  height:60px;
+  border-radius:100%;
+  background:#F44336;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-transition: all 1s ease;
+	 -moz-transition: all 1s ease;
+	 -o-transition: all 1s ease;
+	position:absolute;
+	bottom:0;
+	right:0;
+	 margin: 15px 0;
+}
+.kc_fab_main_btn:hover{
+ height: 100px;
+ width: 100px;
+ margin-left: -50px;
+}
+
+/*one post edited page*/
+.back_title h3{
+	font-family: 'Gloria Hallelujah', cursive;
+	font-weight: bolder;
+	font-size: 20px;
+}
+/*.back_button{
+	height: 10vh;
+}
+.back_arrow{
+	background-image: url(../images/back.svg);
+	background-size: cover;
+	height: 10vh;
+}*/
