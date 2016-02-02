@@ -5,13 +5,9 @@
   <a href="{% url "wikis:wikis" %}" class="btn btn-default btn-lg">all wikis</a>
 </div>
 <br>
-<h1 class="text-center">WIKI CLONE</h1>
+
 <div class="container">
-  <form class="form" action="/search/" method='GET'>
-    <input class="form-control" name='q' type="text" placeholder="search title" value="{{ request.GET.q }}">
-    <br>
-    <button type="submit" class="btn btn-primary btn-lg">search</button>
-  </form>
+
 </div>
 <br>
 {% endblock %}

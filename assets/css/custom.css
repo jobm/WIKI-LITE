@@ -1,3 +1,9 @@
+/*nav-bar styling*/
+.logo_name{
+	font-family: 'Gloria Hallelujah', cursive;
+	font-weight: bolder;
+	font-size: 30px;
+}
 .text-align-center {
 	text-align: center;
 }

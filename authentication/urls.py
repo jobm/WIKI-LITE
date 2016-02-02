@@ -4,8 +4,6 @@ from django.conf.urls.static import static
 from authentication import views
 
 urlpatterns = [
-    url(r'contact/$', views.contact, name='contact'),
-    url(r'about/$', views.about, name='about'),
     url(r'accounts/', include('registration.backends.default.urls')),
 ]
 
