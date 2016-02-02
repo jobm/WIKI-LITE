@@ -1,21 +1,14 @@
 {% include 'head_css.html' %}
 
    <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default">
       <div class="container">
-      <div id="navbar" class="navbar-collapse collapse">
+
 
         <div class="col-sm-2 col-md-2">
           <ul class="nav navbar-nav">
-            <li><a class="logo_name" href="/">Wiki Clone</a></li>
+            <li><a class="logo_name" href="{% url "wikis:wikis" %}">Wiki Clone</a></li>
           </ul>
-
-          <!-- search function -->
-          <!-- <form class="form" action="/search/" method='GET'>
-            <input class="form-control" name='q' type="text" placeholder="search title" value="{{ request.GET.q }}">
-            <br>
-            <button type="submit" class="btn btn-primary">search</button>
-          </form> -->
         </div>
           <div class="col-sm-3 col-md-3">
           <form class="navbar-form form" action="/search/" method='GET' role="search">
@@ -50,6 +43,6 @@
           {% endif %}
         </div>
 
-        </div><!--/.nav-collapse -->
+
       </div>
     </nav>
