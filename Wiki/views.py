@@ -49,35 +49,38 @@ def wiki_create(request):
 
 
 # editing and article"""
-def wiki_edit_form(request, pk):
-    request.session['id'] = pk
-    wiki_pk = pk
+def wiki_edit_form(request, slug=None):
+    request.session['slug'] = slug
+    wiki_slug = slug
     # get the wiki with its pk
-    wiki = get_object_or_404(Article, id=pk)
+    wiki = get_object_or_404(Article, slug=slug)
     # instantiate the form with an instance of the wiki to be edited
     article_edit_form = ArticleEditForm(instance=wiki)
     # then display the form
     return render(request, 'wiki_form.html',
                            {'article_edit_form': article_edit_form,
-                            "id": wiki_pk})
+                            "slug": wiki_slug})
 
 
 # Updating a wiki"""
-def wiki_update(request, pk=None):
-    wiki = get_object_or_404(Article, pk=pk)
+def wiki_update(request):
+    slug = request.session['slug']
+    wiki = get_object_or_404(Article, slug=slug)
     article_edit_form = ArticleEditForm(request.POST or None, instance=wiki)
     if request.method == 'POST':
         if article_edit_form.is_valid():
+            wiki = article_edit_form.save(commit=False)
             article_edit_form.save()
+            request.session['slug'] = None
             return redirect('/wikis/')
     return render(request, 'wiki_form.html',
                            {'article_edit_form': article_edit_form})
 
 
 # deleting a wiki
-def wiki_delete(request, pk=None):
+def wiki_delete(request, slug=None):
     """get the wiki"""
-    wiki = get_object_or_404(Article, pk=pk)
+    wiki = get_object_or_404(Article, slug=slug)
     """delete the wiki"""
     wiki.delete()
-    return redirect('/wikis/wiki/')
+    return redirect('/wikis/')

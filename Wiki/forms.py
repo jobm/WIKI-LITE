@@ -41,6 +41,7 @@ class ArticleEditForm(ModelForm):
 
     class Meta:
         model = Article
+        # fields = ['title', 'post', 'category']
         exclude = ('date_created',
                    'date_updated',
                    'created',

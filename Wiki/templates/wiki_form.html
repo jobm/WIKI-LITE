@@ -5,7 +5,7 @@
         <div class="container">
             <br>
             <!--<a href="/wikis/wiki/delete/{{id}}" class="btn btn-danger btn-lg">delete</a>-->
-            <a href="{% url "wikis:delete" id %}" class="btn btn-danger btn-lg">delete</a>
+            <a href="{% url "wikis:delete" slug %}" class="btn btn-danger btn-lg">delete</a>
             <br>
             <br>
             {% csrf_token %}

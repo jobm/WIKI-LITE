@@ -5,6 +5,6 @@
 *.pot
 *.pyc
 venv35
-/migrations
+/migrations/
 db.sqlite3
-/whoosh_index
+/whoosh_index/

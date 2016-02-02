@@ -18,13 +18,13 @@
         <ul class="list-group">
           {% for wiki in wikis %}
           <li class="list-group-item">
-            <a class="post_title" href="{% url "wikis:details" wiki.pk %}">{{wiki.title}}</a>
+            <a class="post_title" href="{% url "wikis:details" wiki.slug %}">{{wiki.title}}</a>
             <h5 class="post_category">category: {{wiki.category}}</h5>
             <h5 class="post_date">published on: {{ wiki.date_created }}</h5>
             <p class="main_post">
               {{wiki.post}}
             </p>
-            <a href="{% url "wikis:edit" wiki.pk %}" class="btn btn-default btn-lg"><i class="fa fa-pencil"></i></a>
+            <a href="{% url "wikis:edit" wiki.slug %}" class="btn btn-default btn-lg"><i class="fa fa-pencil"></i></a>
             </button>
             <hr>
           </li>
