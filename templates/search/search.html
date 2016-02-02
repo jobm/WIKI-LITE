@@ -4,7 +4,7 @@
 <div class="container">
 
     {% for result in page.object_list %}
-        <a href="/wikis/wiki/{{result.object.slug}}">{{ result.object.slug }}</a>
+        <a href="/wikis/wiki/{{result.object.slug}}">{{ result.object.title }}</a>
         <p>{{ result.object.post }}</p>
     {% empty %}
         <p>No results found.</p>
