@@ -21,7 +21,7 @@ class ArticleAddForm(ModelForm):
         super(ArticleAddForm, self).__init__(*args, **kwargs)
         # Init layout form with crispy
         self.helper = FormHelper()
-        self.helper.form_action = '/wikis/wiki/add/'
+        self.helper.form_action = '/wikis/wiki/create/'
         self.helper.form_method = 'POST'
         self.helper.form_show_labels = True
         self.helper.layout = Layout(
