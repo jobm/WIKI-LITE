@@ -1,5 +1,112 @@
+/*nav-bar styling*/
+.navbar{
+	margin: 0!important;
+}
+.logo_name{
+	font-family: 'Gloria Hallelujah', cursive;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.home_details{
+	height: 100%;
+}
+.home_details h3{
+	color: white;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-size: 5rem;
+	font-weight: lighter;
+}
+.home_details p{
+	font-size: 1.6rem;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-weight: lighter;
+	letter-spacing:0.1em;
+	color:white;
+	/*text-indent: 9.5mm;*/
+  line-height: 1.5;
+}
+.home_details li{
+	font-size: 1.6rem;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-weight: lighter;
+	letter-spacing:0.1em;
+	color:white;
+	/*text-indent: 9.5mm;*/
+  line-height: 1.5;
+}
+/*signup form start*/
+.signup_home{
+	height: 100vh;
+	border: 1px solid white;
+	background-color: #E80CBF;
+}
+.wrapper{
+	margin-top: 50px;
+	max-width: 380px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+.form-signin-heading{
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-weight: lighter;
+}
+.form-signin {
+  max-width: 380px;
+
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 30px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .text-align-center {
 	text-align: center;
+}
+/*cover page*/
+.home_cover{
+	height: 100vh;
+	background:
+  linear-gradient(
+      rgba(218, 12,147, 255),
+    rgba(12, 12, 13, 0.64)
+
+  ),
+  /* bottom, image */
+  url(../images/pen_paper.jpg);
+  background-size: cover;
+
 }
 /*main posts feed styling
 

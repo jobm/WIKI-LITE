@@ -1,17 +1,51 @@
 {% extends 'Layout.html' %}
 {% block content %}
-<br>
-<div class="container">
-  <a href="{% url "wikis:wikis" %}" class="btn btn-default btn-lg">all wikis</a>
+<div class="home_cover">
+
+  <!-- <div class="container">
+    <a href="{% url "wikis:wikis" %}" class="btn btn-default btn-lg">all wikis</a>
+  </div> -->
+  <div class="container">
+    <div class="col-md-6 col-s-12 home_details">
+      <h3>Welcome to Wiki Clone</h3>
+      <br>
+      <p>We provide a platform for people who love to write and those who love to read.
+        With Wiki you can write your <b>desired articles</b>,give them their <b> appropriate categories</b> and <b>publish</b> them for people to read.
+        A member of Wiki can also edit the articles giving it additional meaning.
+
+        <br>
+    <hr>
+     <br>
+     <p>Here are some rules to follow before you continue</p>
+     <ul>
+        <li>Articles with threats and violence will be removed</li>
+        <li>Adverts are not allowed</li>
+        <li>No porn. There are other places to post it. You know where they are.</li>
+        <li>wrong editing of articles will lead to reverting the article to its original state</li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-s-12 signup_home">
+      <div class="wrapper">
+          {% if not request.user.is_authenticated and not "/auth/accounts/login/" in request.get_full_path %}
+          <form class="form-signin" method='POST' action="/auth/accounts/login/">{% csrf_token %}
+            <h2 class="form-signin-heading">Please login</h2>
+              <input type='text' class='form-control' name='username' placeholder='Username' />
+          <input type='password' class='form-control' name='password' placeholder='Password' />
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            <br>
+
+          </form>
+            {% endif %}
+            <p>Do not have an account?<a href="/auth/accounts/register/">Register</a></p>
+            <br>
+            <p>  <a href="{% url "wikis:wikis" %}">Skip</a> to view articles</p>
+
+        </div>
+        <br><br>
+
+    </div>
+
 </div>
-<br>
-<h1 class="text-center">WIKI CLONE</h1>
-<div class="container">
-  <form class="form" action="/search/" method='GET'>
-    <input class="form-control" name='q' type="text" placeholder="search title" value="{{ request.GET.q }}">
-    <br>
-    <button type="submit" class="btn btn-primary btn-lg">search</button>
-  </form>
 </div>
-<br>
 {% endblock %}
