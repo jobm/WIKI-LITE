@@ -1,5 +1,17 @@
 {% extends 'Layout.html' %}
 
 {% block content %}
-   <p>{{ wiki.title }}</p>
+<div class="row back_button">
+  <br>
+  <div class="col-md-4 back_title">
+    <a href="{% url "wikis:wikis" %}"<h3 class="logo_name">Back to articles</h3></a>
+  </div>
+</div>
+<div class="container">
+  <br>
+   <h1 class="post_title">{{ wiki.title }}</h1>
+   <hr>
+   <p class="main_post">{{wiki.post}}</p>
+</div>
+
 {% endblock %}
