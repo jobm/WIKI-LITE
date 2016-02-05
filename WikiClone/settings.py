@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'haystack',
     'authentication',
     'Wiki',
+    'django_mandrill',
     # end
 
 ]
@@ -168,3 +169,10 @@ HAYSTACK_CONNECTIONS = {
 }
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+
+LOGIN_REDIRECT_URL = "/wikis/"
+
+EMAIL_BACKEND = 'django_mandrill.mail.backends.mandrillbackend.EmailBackend'
+
+MANDRILL_API_KEY = "nGAJg9BStE962MmM4gqY2A"
