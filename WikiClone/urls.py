@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^autocomplete/', views.search_titles),
     url(r'^search/', include('haystack.urls')),
     url(r'^wikis/', include('Wiki.urls', namespace='wikis')),
-    url(r'^auth/', include('authentication.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^auth/accounts/', include('registration.backends.default.urls')),
 ]
