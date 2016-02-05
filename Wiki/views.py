@@ -1,7 +1,7 @@
 from django.shortcuts import (render, render_to_response,
                               redirect, get_object_or_404)
 from Wiki.forms import ArticleAddForm, ArticleEditForm, SearchForm
-from Wiki.models import Article, ArticleFilter
+from Wiki.models import Article
 import simplejson as json
 from django.http import HttpResponse
 from django.db.models import Q
