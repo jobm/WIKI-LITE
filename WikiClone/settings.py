@@ -156,7 +156,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/wikis/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
@@ -170,6 +170,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
 
 LOGIN_REDIRECT_URL = "/wikis/"
 
