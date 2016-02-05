@@ -142,16 +142,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-
-MEDIA_URL = '/media/'
-STATIC_ROOT = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
-    # os.path.join(BASE_DIR, "static_in_env"),
-    # '/var/www/static/',
-)
-
 # Crispy FORM TAGs SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
@@ -160,6 +150,10 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/wikis/'
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
