@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'wiki/update/$', views.wiki_update, name="update"),
     url(r'wiki/(?P<slug>[\w-]+)/$', views.wiki_view, name="details"),
     url(r'wiki/(?P<slug>[\w-]+)/edit/$', views.wiki_edit_form, name="edit"),
+    url(r'wiki/(?P<slug>[\w-]+)/edit/$', views.wiki_edit_form, name="edit"),
     url(r'wiki/(?P<slug>[\w-]+)/delete/$', views.wiki_delete, name="delete"),
 ]
