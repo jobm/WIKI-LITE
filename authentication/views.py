@@ -3,7 +3,6 @@ from django.core.mail import send_mail
 from django.shortcuts import render
 from .models import SignUp
 
-
 # Create your views here.
 def auth(request):
     title = 'Sign Up Now'
