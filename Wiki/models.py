@@ -1,7 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
 from django.utils.timezone import now
-import django_filters
 # Create your models here.
 
 
@@ -15,10 +14,3 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
-
-
-# filter set model
-class ArticleFilter(django_filters.FilterSet):
-    class Meta:
-        model = Article
-        fields = ['category']

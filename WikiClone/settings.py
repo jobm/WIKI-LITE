@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'whoosh',
     'haystack',
     'authentication',
-    'django_filters',
     'Wiki',
     # end
 
