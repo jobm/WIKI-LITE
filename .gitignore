@@ -5,4 +5,3 @@
 *.pot
 *.pyc
 venv35
-/migrations/

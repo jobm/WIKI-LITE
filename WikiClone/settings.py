@@ -36,6 +36,7 @@ SECRET_KEY = 'gyoaiy(^9_f+&%v_3pc&l0owz)qj!%j6urrlgby)f5g-xp*v#)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
     'registration',
     'whoosh',
     'haystack',
-    'authentication',
+    'AuthApp',
     'Wiki',
     'django_mandrill',
     # end
