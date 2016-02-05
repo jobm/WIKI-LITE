@@ -169,3 +169,4 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 MANDRILL_API_KEY = "nGAJg9BStE962MmM4gqY2A"
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
