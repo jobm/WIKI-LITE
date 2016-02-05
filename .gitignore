@@ -7,3 +7,6 @@
 venv35
 /migrations/
 db.sqlite3
+/staticfiles/
+/static_in_pro/
+/static_in_env/
