@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 # Create your views here
 
-LOGIN_URL = '/auth/accounts/login/'
+LOGIN_URL = '/auth/accounts/register/'
 
 
 # this is the view for registered users

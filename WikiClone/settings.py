@@ -171,3 +171,5 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 LOGIN_REDIRECT_URL = "/wikis/"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

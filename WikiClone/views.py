@@ -9,8 +9,8 @@ def home_page(request):
 
 # haystack search
 def search_titles(request):
-    ct_auto = SearchQuerySet().autocomplete(auto_title=
-                                            request.GET.get('q', ''))[:5]
+    ct_auto = SearchQuerySet().autocomplete(
+        auto_title=request.GET.get('q', ''))[:5]
     data = json.dumps({
         'results': [article.title for article in ct_auto]
     })
