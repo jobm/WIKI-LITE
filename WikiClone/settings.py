@@ -9,8 +9,20 @@ https://docs.djangoproject.com/en/1.9/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
-
+import dj_database_url
 import os
+
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config()
+DATABASES['default']['CONN_MAX_AGE'] = 500
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,8 +35,6 @@ SECRET_KEY = 'gyoaiy(^9_f+&%v_3pc&l0owz)qj!%j6urrlgby)f5g-xp*v#)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 # Application definition
 
