@@ -169,3 +169,5 @@ HAYSTACK_CONNECTIONS = {
 }
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+LOGIN_REDIRECT_URL = "/wikis/"

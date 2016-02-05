@@ -5,7 +5,10 @@ from Wiki.models import Article, ArticleFilter
 import simplejson as json
 from django.http import HttpResponse
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 # Create your views here
+
+LOGIN_URL = '/auth/accounts/login/'
 
 
 # this is the view for registered users
@@ -26,6 +29,7 @@ def wiki_view(request, slug):
 
 
 # form to create a wiki"""
+@login_required(login_url=LOGIN_URL)
 def wiki_add_form(request):
     # instantiating a blank form
     article_form = ArticleAddForm
@@ -33,6 +37,7 @@ def wiki_add_form(request):
 
 
 # creating a wiki
+@login_required(login_url=LOGIN_URL)
 def wiki_create(request):
     # instantiating the form with a POST request if one exists"""
     article_form = ArticleAddForm(request.POST or None)
@@ -49,6 +54,7 @@ def wiki_create(request):
 
 
 # editing and article"""
+@login_required(login_url=LOGIN_URL)
 def wiki_edit_form(request, slug=None):
     request.session['slug'] = slug
     wiki_slug = slug
@@ -63,6 +69,7 @@ def wiki_edit_form(request, slug=None):
 
 
 # Updating a wiki"""
+@login_required(login_url=LOGIN_URL)
 def wiki_update(request):
     slug = request.session['slug']
     wiki = get_object_or_404(Article, slug=slug)
@@ -78,6 +85,7 @@ def wiki_update(request):
 
 
 # deleting a wiki
+@login_required(login_url=LOGIN_URL)
 def wiki_delete(request, slug=None):
     """get the wiki"""
     wiki = get_object_or_404(Article, slug=slug)
