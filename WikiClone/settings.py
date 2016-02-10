@@ -25,9 +25,9 @@ ALLOWED_HOSTS = ['*']
 
 """
 EMAIL_HOST = "smtp.mandrillapp.com"
-EMAIL_HOST_USER = "587"
-EMAIL_HOST_PASSWORD = ""
-EMAIL_PORT = ""
+EMAIL_HOST_USER = "victorgichohi48@gmail.com"
+EMAIL_HOST_PASSWORD = "nGAJg9BStE962MmM4gqY2A"
+EMAIL_PORT = "587"
 EMAIL_USE_TSL = ""
 """
 
