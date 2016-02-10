@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 import dj_database_url
 import os
-
+from WikiClone.config import *
 
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
@@ -23,6 +23,13 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
+"""
+EMAIL_HOST = "smtp.mandrillapp.com"
+EMAIL_HOST_USER = "587"
+EMAIL_HOST_PASSWORD = ""
+EMAIL_PORT = ""
+EMAIL_USE_TSL = ""
+"""
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third party apps
+    'djrill',
     'crispy_forms',
     'registration',
     'whoosh',
@@ -166,5 +174,10 @@ HAYSTACK_CONNECTIONS = {
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
-MANDRILL_API_KEY = "nGAJg9BStE962MmM4gqY2A"
+
+# email settings
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+MANDRILL_API_KEY = API_KEY
+DEFAULT_FROM_EMAIL = MY_EMAIL
+
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

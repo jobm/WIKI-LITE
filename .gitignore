@@ -5,3 +5,4 @@
 *.pot
 *.pyc
 venv35
+config.py
