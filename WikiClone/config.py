@@ -1,2 +1,2 @@
-API_KEY = "nGAJg9BStE962MmM4gqY2A"
-MY_EMAIL = "jobmwaniki17@yahoo.com"
+YOUR_API_KEY = ""
+YOUR_DEFAULT_EMAIL = ""
