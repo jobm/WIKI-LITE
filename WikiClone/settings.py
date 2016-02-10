@@ -155,6 +155,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # DJANGO REGISTRATION REDUX SETTINGS
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
 LOGIN_REDIRECT_URL = '/wikis/'
 
 STATIC_ROOT = 'staticfiles'
@@ -177,6 +178,6 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 # email settings
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
 MANDRILL_API_KEY = "nGAJg9BStE962MmM4gqY2A"
-DEFAULT_FROM_EMAIL = "jobmwaniki17@yahoo.com"
+DEFAULT_FROM_EMAIL = "jobmwaniki18@gmail.com"
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
