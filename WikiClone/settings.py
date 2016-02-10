@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 import dj_database_url
 import os
-from WikiClone.config import *
+
 
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
@@ -177,7 +177,7 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # email settings
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
-MANDRILL_API_KEY = API_KEY
-DEFAULT_FROM_EMAIL = MY_EMAIL
+MANDRILL_API_KEY = "nGAJg9BStE962MmM4gqY2A"
+DEFAULT_FROM_EMAIL = "jobmwaniki17@yahoo.com"
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
