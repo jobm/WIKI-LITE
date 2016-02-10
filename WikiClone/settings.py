@@ -177,7 +177,7 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # email settings
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
-MANDRILL_API_KEY = YOUR_API_KEY
-DEFAULT_FROM_EMAIL = YOUR_DEFAULT_EMAIL
+MANDRILL_API_KEY = 'nGAJg9BStE962MmM4gqY2A'
+DEFAULT_FROM_EMAIL = 'victorgichohi48@gmail.com'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
