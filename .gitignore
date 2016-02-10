@@ -5,5 +5,5 @@
 *.pot
 *.pyc
 venv35
-config
+config.py
 db.sqlite3
